@@ -9,6 +9,7 @@
 
 
 # Docker apache2 - image basic
+```
 mkdir /home/sda/docker/Dockerfile.d/apache2
 cd /home/sda/docker/Dockerfile.d/apache2
 nano Dockerfile
@@ -18,5 +19,5 @@ nano Dockerfile
     ## /!\ It must to create the folder "./public-html/" in current DIR ou give a existing folder
 docker build -t <Docker_Image_Name> .
 docker run -dit --network <Docker_Network_Name> --name <COntainer_Name> -p 8080:80 <Docker_Image_Name>
-
+```
 
