@@ -1,6 +1,6 @@
 # saz-docker-mariadb
 
-#plateform/windows & Linux
+#plateform/windows & linux
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
