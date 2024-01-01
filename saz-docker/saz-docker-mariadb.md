@@ -5,7 +5,7 @@
 #cat/PRIVESC
 #cat/PERSIST
 #cat/SAJJAD
-#tag/curl
+#tag/docker-mariadb
 
 
 # Docker mariadb - pull latest version

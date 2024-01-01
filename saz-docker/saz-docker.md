@@ -5,7 +5,7 @@
 #cat/PRIVESC
 #cat/PERSIST
 #cat/SAJJAD
-#tag/curl
+#tag/docker
 
 ## Docker restart service
 ```
@@ -27,13 +27,22 @@ docker run --rm -port<host_port>:<Container_port> --name <Container_Name> --netw
 docker run --rm -port<host_port>:<Container_port> --name <Container_Name> --network <network_Name> <Image_name>:<Image_Version>
 ```
 
-## Docker busybox RUN Command by BusyBox
+## Docker restart service
 ```
-docker run busybox <Bash_Commande>
-```
-
-## Docker busybox run interactive
-```
-docker run --rm --name <Container_Name> --network <network_Name> <Image_name>:<Image_Version>
+systemctl restart docker
 ```
 
+## Docker - connect to a container  interactively
+```
+docker exec -it  <Container_Name> <bash_or_sh_mysql_etc>
+```
+
+## Docker - copy into a container
+```
+docker cp <source_files_or_folder> <container_name>:<container_destination_DIR>
+```
+
+## Docker - copy from a container
+```
+docker cp <container_name>:<container_destination_DIR> <source_files_or_folder>
+```

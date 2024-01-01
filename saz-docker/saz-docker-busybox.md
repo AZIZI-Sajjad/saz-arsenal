@@ -5,7 +5,7 @@
 #cat/PRIVESC
 #cat/PERSIST
 #cat/SAJJAD
-#tag/curl
+#tag/docker-busybox
 
 
 # Docker busybox - custom image - instal a curl
@@ -33,3 +33,12 @@ sudo docker build -t custom-busybox-with-curl:v2 .
 sudo docker run -dit --network net-busybox-apache2 --name container-busybox-curl custom-busybox-with-curl:v2
 ```
 
+## Docker busybox RUN Command by BusyBox
+```
+docker run busybox <Bash_Commande>
+```
+
+## Docker busybox RUN interactive
+```
+docker run busybox 
+```
