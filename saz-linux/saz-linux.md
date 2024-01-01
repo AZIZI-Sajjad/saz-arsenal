@@ -21,3 +21,9 @@ du -h
 ```
 du -hs
 ```
+
+
+## Linux - Grep - remove Emprty lines & comment - Exemple : a enabled site in apache :
+```
+cat /etc/apache2/sites-enabled/000-default.conf | grep -Ev "#|^$"
+```
