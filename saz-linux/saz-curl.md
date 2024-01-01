@@ -9,8 +9,12 @@
 
 
 ## Curl -  Show document info only 
+```
 curl -Iv --stderr - <$DOMAINE> | grep -e "expire date"
+```
 
 ## Curl -  Show document info only VERBOSE
+```
 curl -Iv --stderr - <$DOMAINE> | grep -e "expire date"
+```
 
