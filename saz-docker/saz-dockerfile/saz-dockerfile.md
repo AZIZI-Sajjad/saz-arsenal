@@ -10,13 +10,11 @@
 
 ## DockerFile - COPY
 ```
-FROM dsff/dsfsf:version
 COPY <Source-Locale> <Destination_In_Container>
 ```
 
 ## DockerFile - COPY & Install Requirements.txt
 ```
-FROM dsff/dsfsf:version
 COPY <requirements_File> <Destination_DIR_In_Docker_To_Copy_Requirements.txt>
 RUN pip install -r <Destination_DIR_In_Docker_To_Copy_Requirements.txt>
 COPY <Source-Locale> <Destination_In_Container>
