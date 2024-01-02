@@ -1,13 +1,13 @@
-# saz-DockerFile
+# saz-dockerFile-debian
 
 #plateform/windows & Linux
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
 #cat/SAJJAD
-#tag/DockerFile
+#tag/saz-dockerFile-debian
 
-## Docker debian container
+## Docker debian container + basics tools
 ```
 mkdir /home/sda/docker/Dockerfile.d/debian
 cd /home/sda/docker/Dockerfile.d/debian
@@ -21,5 +21,10 @@ nano -c <Dockerfile_Name>
 
 sudo docker build -t <New_Image_Name>:<tag> -f <Dockerfile_Name> <Dockerfile_DIR>
 sudo docker run -dit --network <Docker_Network_Name> --name <container_Name> <New_Image_Name>:<tag>
+```
 
+
+## Docker debian container RUN with TTY
+```
+sudo docker exec -it <container_Name> /bin/bash
 ```
