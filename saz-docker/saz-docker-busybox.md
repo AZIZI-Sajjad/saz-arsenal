@@ -15,5 +15,5 @@ docker run busybox <Bash_Commande>
 
 ## Docker busybox RUN interactive
 ```
-docker run busybox 
+docker run -it busybox 
 ```
