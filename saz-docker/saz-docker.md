@@ -47,3 +47,19 @@ docker cp <source_files_or_folder> <container_name>:<container_destination_DIR>
 ```
 docker cp <container_name>:<container_destination_DIR> <source_files_or_folder>
 ```
+
+## Docker - Create Network with {{ subnet }} {{ GateWay }} {{ DNS }}
+```
+docker network create \
+    --driver=bridge \
+    --subnet=<Network_ID/Subnet> \
+    --ip-range=<Network_ID/Subnet> \
+    --gateway=<GateWay_IP> \
+    --opt "com.docker.network.bridge.name=dns" \
+    --opt "com.docker.network.bridge.enable_ip_masquerade=false" \
+    --opt "com.docker.network.bridge.enable_icc=false" \
+    --opt "com.docker.network.bridge.host_binding_ipv4=0.0.0.0" \
+    --opt "com.docker.network.driver.mtu=9001" \
+    --opt "com.docker.network.bridge.dns=<GateWay_IP>" \
+    <New_Docker_Network_Name>
+```
