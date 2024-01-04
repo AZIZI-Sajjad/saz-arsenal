@@ -66,6 +66,12 @@ docker cp <container_name>:<container_destination_DIR> <source_files_or_folder>
 ```
 
 
+## Docker - Create Network simple
+```
+sudo docker network crete <New_Docker_Network_Name>
+```
+
+
 ## Docker - Create Network with {{ subnet }} {{ GateWay }} {{ DNS }}
 ```
 docker network create \
@@ -80,4 +86,10 @@ docker network create \
     --opt "com.docker.network.driver.mtu=9001" \
     --opt "com.docker.network.bridge.dns=<GateWay_IP>" \
     <New_Docker_Network_Name>
+```
+
+
+## Docker - Disconnect container from Docker Network 
+```
+sudo docker network disconnect <Docker_Network_Name> <Container-Name_Or_ID>
 ```
