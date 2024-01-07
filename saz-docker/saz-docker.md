@@ -103,6 +103,7 @@ sudo docker network crete <New_Docker_Network_Name>
     ### Run the container and set its parameters
     sudo docker run -dit --name <Container_Name> --network <New_Docker_network_Name> --ip <Container_IP> --dns <Container_DNS> <Image_Name>:<Image_Tag>
 
+### NOTE : Internet OK / Can not PING the docker network's NETWORK  / PING All other networks subnets OK 
 ```
 
 
