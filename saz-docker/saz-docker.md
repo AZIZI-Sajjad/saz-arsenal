@@ -16,7 +16,7 @@ systemctl restart docker
 
 ## Docker run container  and delete image immediatly after launch to test the image
 ```
-docker run -dit --rm <image_name>
+docker run -dit --rm --hostname <Container_HostName> <image_name>
 ```
 
 
@@ -38,13 +38,13 @@ docker attach <Container_Name>
 
 ## Docker run a container with specified {{ -dit }} {{ --rm }} {{name}} & {{port}} & {{network}} & {{data_persitence}} & {{image_Version}}
 ```
-docker run -dit --rm -port<host_port>:<Container_port> --name <Container_Name> --network <network_Name> <Image_name>:<Image_Version>
+docker run -dit --rm -port<host_port>:<Container_port> --name <Container_Name> --network <network_Name> --hostname <Container_HostName> <Image_name>:<Image_Version>
 ```
 
 
 ## Docker run a container with specified {{ -dit }} {{ --rm }} {{name}} & {{port}} & {{network}} & {{data_persitence}} & {{image_Version}}
 ```
-docker run -dit --rm -port<host_port>:<Container_port> --name <Container_Name> --network <network_Name> <Image_name>:<Image_Version>
+docker run -dit --rm -port<host_port>:<Container_port> --name <Container_Name> --network <network_Name> --hostname <Container_HostName> <Image_name>:<Image_Version>
 ```
 
 
@@ -54,9 +54,15 @@ systemctl restart docker
 ```
 
 
-## Docker - connect to a container  interactively
+## Docker - connect to a container  interactively -> Via EXEC  
 ```
 docker exec -it  <Container_Name> <bash_or_sh_mysql_etc>
+```
+
+
+## Docker - connect to a container  interactively -> via ATTACH
+```
+docker attach <Container_Name>
 ```
 
 
@@ -107,38 +113,17 @@ sudo docker network crete <New_Docker_Network_Name>
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Docker - Disconnect container from Docker Network 
 ```
 sudo docker network disconnect <Docker_Network_Name> <Container-Name_Or_ID>
 ```
 
 
-
-
-
 ## Docker run swarm manager
 ```
 docker swarm init
 ```
+
 
 ## Docker Get swarm join-token's manager
 ```
