@@ -135,8 +135,12 @@ sudo docker network disconnect <Docker_Network_Name> <Container-Name_Or_ID>
 
 
 
-## Docker Errors - Error response from daemon: This node is not a swarm manager.
+## Docker run swarm manager
 ```
 docker swarm init
 ```
 
+## Docker Get swarm join-token's manager
+```
+docker docker swarm join-token manager
+```
