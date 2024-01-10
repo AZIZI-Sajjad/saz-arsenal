@@ -28,5 +28,5 @@ docker build -t <New_Docker-Image_Name>:<version_{{Tag}}> .
 
 ## DockerFile Build an image & specified name
 ```
-docker build -t <New_Docker-Image_Name>:<version_{{Tag}}> <DockerFile_Dir>
+docker build -t <New_Docker-Image_Name>:<version_{{Tag}}> -f <Dockerfile_Name> <DockerFile_Dir>
 ```
