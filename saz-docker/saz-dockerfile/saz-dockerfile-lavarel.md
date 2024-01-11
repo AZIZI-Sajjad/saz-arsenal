@@ -9,7 +9,7 @@
 #tag/dockerfile-lavarel
 ```
 
-## saz-dockerfile-lavarel PHP8.1
+## Dockerfile - lavarel PHP8.1
 ```
     ####
     #### Réf: https://www.it-connect.fr/installation-de-php-8-1-sur-debian-11-pour-son-serveur-web/
@@ -63,7 +63,7 @@
 
 
 
-## saz-dockerfile-lavarel MYSQL 5.7
+## Dockerfile - lavarel MYSQL 5.7
 ```
     #### 
     #### Réf: https://www.it-connect.fr/installation-de-php-8-1-sur-debian-11-pour-son-serveur-web/

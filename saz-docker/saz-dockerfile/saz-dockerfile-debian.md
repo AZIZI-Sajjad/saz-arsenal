@@ -8,7 +8,7 @@
 #tag/saz-dockerFile-debian
 ```
 
-## Docker debian container + basics tools
+## Dockerfile debian container + basics tools
 ```
 mkdir /home/sda/docker/Dockerfile.d/debian
 cd /home/sda/docker/Dockerfile.d/debian
@@ -25,7 +25,7 @@ sudo docker run -dit --network <Docker_Network_Name> --name <container_Name> <Ne
 ```
 
 
-## Docker debian container RUN with TTY
+## Dockerfile debian container RUN with TTY
 ```
 sudo docker exec -it <container_Name> /bin/bash
 ```
