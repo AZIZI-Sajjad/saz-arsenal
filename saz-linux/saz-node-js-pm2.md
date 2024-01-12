@@ -9,12 +9,18 @@
 
 
 
+## Node-JS pm2 - 00 Save Configurations for next System restart ou service restart
+```
+pm2 save
+```
+
+
+
 ## Node-JS pm2 - Restart Application
 ```
 pm2 start <Application_front_dist_ssr_index.js> --name <Application_Firendly_Name>
         #### Exemple : pm2 start /var/www/html/cabinet-delsol/front/dist/ssr/index.js --name Cabinetdelsol
 ```
-
 
 
 ## Node-JS pm2 - Restart Application
