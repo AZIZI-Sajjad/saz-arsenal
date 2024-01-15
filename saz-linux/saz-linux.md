@@ -32,3 +32,4 @@ cat /etc/apache2/sites-enabled/000-default.conf | grep -Ev "#|^$"
 ```
 sudo ip route add <Net_ID>/<Subnet_Prefix> via <GateWay_IP>
 ```
+
