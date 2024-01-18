@@ -86,12 +86,12 @@ sudo docker network crete <New_Docker_Network_Name>
 
 ## Docker - Create Network with {{ subnet }} {{ GateWay }} {{ DNS }}
 ```
-    ### 1- Create New Interface On th Docker Host to pass docker Network - This is the Container's GATEWAY 
+    #### 1- Create New Interface On th Docker Host to pass docker Network - This is the Container's GATEWAY 
     sudo ip link add name <New_Docker_network_Name> type bridge
     sudo ip addr add <Gateway_IP> dev <New_Docker_network_Name>
     sudo ip link set dev <New_Docker_network_Name> up
 
-    ### 2- Crete Docker Network type Overlay
+    #### 2- Crete Docker Network type Overlay
     sudo docker network create \
         --subnet=<Network_ID/Subnet> \
         --ip-range=<Network_ID/Subnet> \
@@ -106,10 +106,10 @@ sudo docker network crete <New_Docker_Network_Name>
         --opt "com.docker.network.driver.mtu"="1500" \
         <New_Docker_network_Name>
     
-    ### Run the container and set its parameters
+    #### Run the container and set its parameters
     sudo docker run -dit --name <Container_Name> --network <New_Docker_network_Name> --ip <Container_IP> --dns <Container_DNS> <Image_Name>:<Image_Tag>
 
-    ### NOTE : Internet OK / Can not PING the docker network's NETWORK  / PING All other networks subnets OK 
+    #### NOTE : Internet OK / Can not PING the docker network's NETWORK  / PING All other networks subnets OK 
 ```
 
 
