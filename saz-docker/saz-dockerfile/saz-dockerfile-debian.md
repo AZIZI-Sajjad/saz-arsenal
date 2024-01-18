@@ -16,7 +16,9 @@ nano -c <Dockerfile_Name>
     FROM debian
     RUN rm -rf /var/lib/apt/lists/*
     RUN apt-get update
-    RUN apt-get install -y certbot python3-certbot-apache coreutils net-tools vim nano curl iproute2 openssh-server openssh-client sshpass python3 python3-pip
+    RUN apt-get install -y iputils-ping traceroute coreutils net-tools vim nano curl iproute2 openssh-server openssh-client sshpass
+    ENV TZ="Europe/Paris"
+    RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
     ENV LANG en_US.UTF-8
     CMD ["/bin/bash"]
 
