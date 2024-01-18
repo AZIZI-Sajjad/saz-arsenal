@@ -8,6 +8,10 @@
 #tag/node-js-pm2
 
 
+## Node-JS pm2 - Reference:
+```
+https://pm2.keymetrics.io/docs/usage/log-management/
+```
 
 ## Node-JS pm2 - 00 Save Configurations for next System restart ou service restart
 ```

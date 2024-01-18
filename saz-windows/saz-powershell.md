@@ -67,10 +67,23 @@ Set-Service -Name <service_name> -StartupType Automatic
 Start-Service -Name <service_name>
 ```
 
-## PowerShell - Get Services that name start with a keyWord
+## PowerShell - Get Services name start with a keyWord start 
 ```
-\$service = <key_word>; while ($true) { cls; Get-Service -DisplayName "$service*" | Get-Service; Start-Sleep -Seconds 1 }
+\$service = <key_word>; while ($true) { cls; Get-Service -DisplayName '$service*' | Get-Service; Start-Sleep -Seconds 1 }
 ```
+
+
+## PowerShell - Get Services name start with a keyWord STOP
+```
+\$service = <key_word>; Get-Service | Where-Object { $_.DisplayName -like '*$service*' } | Stop-Service -Force
+```
+
+## PowerShell - Get Services name start with a keyWord STOP IN CMD
+```
+\$service = <key_word>; powershell -Command "Get-Service | Where-Object { $_.DisplayName -like '*$service*' } | Stop-Service -Force"
+```
+
+
 
 ## PowerShell - Get system Informations {{ WindowsProductName }}, {{ WindowsVersion }}, {{ OsHardwareAbstractionLayer }}
 ```
