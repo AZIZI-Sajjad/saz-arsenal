@@ -69,7 +69,7 @@ Start-Service -Name <service_name>
 
 ## PowerShell - Get Services name start with a keyWord start 
 ```
-\$service = <key_word>; while ($true) { cls; Get-Service -DisplayName '$service*' | Get-Service; Start-Sleep -Seconds 1 }
+\$service = "<key_word>"; while ($true) { cls; Get-Service -DisplayName "$service*" | Get-Service; Start-Sleep -Seconds 1 }
 ```
 
 
@@ -179,4 +179,14 @@ ipconfig | findstr IPv4
 ## PowerShell - CMD - Get Net IPv6
 ```
 ipconfig | findstr IPv6
+```
+
+
+## PowerShell - Get Windows Restart PowerOff reason 
+```
+    #### 1 
+Get-WinEvent -ProviderName Microsoft-Windows-Kernel-boot -MaxEvents 1000 | Where-Object {$_.id -eq "27"}
+    ##### 2
+Get-WinEvent -ProviderName Microsoft-Windows-Kernel-boot -MaxEvents 1000 | Where-Object {$_.id -eq "25"}
+
 ```
