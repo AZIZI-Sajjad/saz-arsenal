@@ -113,6 +113,22 @@ sudo docker network crete <New_Docker_Network_Name>
 ```
 
 
+## Docker - Create Network Connected to Physical Network ( MACVLAN )
+```
+    #### 1- Crete Docker Network type Overlay
+    sudo docker network create -d macvlan \
+        --subnet=<Net_ID>/<Subnet_Prefix> \
+        --ip-range=<Net_ID>/<Subnet_Prefix> \
+        --gateway=<Gateway_IP> \
+        -o parent=eth0 <New_Docker_network_Name>
+    
+    #### 2- Run the container and set its parameters
+    sudo docker run -dit --name <Container_Name> --network <New_Docker_network_Name> --ip <Container_IP> --dns <Container_DNS> <Image_Name>:<Image_Tag>
+
+    #### NOTE : Internet OK / PING Physical Network OK 
+```
+
+
 ## Docker - Disconnect container from Docker Network 
 ```
 sudo docker network disconnect <Docker_Network_Name> <Container-Name_Or_ID>
