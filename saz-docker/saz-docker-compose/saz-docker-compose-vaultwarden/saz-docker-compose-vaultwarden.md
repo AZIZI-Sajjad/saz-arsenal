@@ -1,4 +1,19 @@
-# https://github.com/dani-garcia/vaultwarden/wiki
+# saz-docker-compose-vaultwarden
+
+```
+#plateform/windows & linux
+#target/local
+#cat/PRIVESC
+#cat/PERSIST
+#cat/SAJJAD
+#tag/docker-compose-vaultwarden
+```
+
+
+## docker-compose-vaultwarden
+```
+  ## https://github.com/dani-garcia/vaultwarden/wiki
+
 version: "3.7"
 services:
   mariadb:
