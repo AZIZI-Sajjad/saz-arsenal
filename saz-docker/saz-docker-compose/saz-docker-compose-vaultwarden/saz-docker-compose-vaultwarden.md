@@ -1,0 +1,76 @@
+# https://github.com/dani-garcia/vaultwarden/wiki
+version: "3.7"
+services:
+  mariadb:
+    image: "mariadb:latest"
+    container_name: "mariadb"
+    hostname: "mariadb"
+    restart: always
+    #  env_file:
+    #   - ".env"
+    volumes:
+      - "mariadb_vol:/var/lib/mysql"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      - "MARIADB_ROOT_PASSWORD_HASH=<MARIADB_ROOT_PASSWORD_HASH>"
+      - "MYSQL_PASSWORD=<MYSQL_PASSWORD>"
+      - "MYSQL_DATABASE=vaultwarden"
+      - "MYSQL_USER=<MYSQL_USER>"
+
+  vaultwarden:
+    image: "vaultwarden/server:latest"
+    container_name: "vaultwarden"
+    hostname: "vaultwarden"
+    restart: always
+    env_file:
+      - ".env"
+    volumes:
+      - "vaultwarden_vol:/data/"
+    environment:
+      ## Had issues when using single parentheses around the mysql URL as in the plain docker example
+      - "DATABASE_URL=mysql://<MYSQL_USER>:<MYSQL_PASSWORD>@mariadb/vaultwarden"
+      # - "ADMIN_TOKEN=${VAULT_ADMIN_TOKEN}"
+      - "ADMIN_TOKEN=<ADMIN_TOKEN>"
+      - "RUST_BACKTRACE=1"
+      - "SIGNUPS_ALLOWED=true"
+      - "INVITATIONS_ALLOWED=true"
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+  # ldap_sync:
+  #   image: vividboarder/vaultwarden_ldap
+  #   volumes:
+  #     - ./ldap.config.toml:/config.toml:ro
+  #     # ./root.cert:/usr/src/vaultwarden_ldap/root.cert:ro
+  #   environment:
+  #     CONFIG_PATH: /config.toml
+  #     RUST_BACKTRACE: 1
+  #   depends_on:
+  #     - vaultwarden
+  #     - ldap
+  #   restart: always
+
+  # ldap:
+  #   image: osixia/openldap
+  #   volumes:
+  #     - /var/lib/ldap
+  #     - /etc/ldap/slapd.d
+  #   environment:
+  #     LDAP_READONLY_USER: 'true'
+  #     LDAP_READONLY_USER_USERNAME: readonly
+  #     LDAP_READONLY_USER_PASSWORD: readonly
+
+  # ldap_admin:
+  #   image: osixia/phpldapadmin
+  #   ports:
+  #     - 8001:80
+  #   environment:
+  #     PHPLDAPADMIN_HTTPS: 'false'
+  #     PHPLDAPADMIN_LDAP_HOSTS: ldap
+  #   depends_on:
+  #     - ldap
+
+volumes:
+  vaultwarden_vol:
+  mariadb_vol:
