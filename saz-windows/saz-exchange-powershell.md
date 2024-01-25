@@ -54,90 +54,42 @@ Get-MailboxExportRequestStatistics -Identity <AdressMail>
 
 ## Exchange 2019 PowerShell - Give Access total on a Adressse Mail to Another Adresse Mail
 ```
-Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@adpam.asso.fr" } | Select-Object PrimarySmtpAddress, DisplayName, servername, Database | Format-Table
+Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Select-Object PrimarySmtpAddress, DisplayName, servername, Database | Format-Table
 ```
 
 
 ## Exchange 2019 PowerShell - Give Access total on a Adressse Mail to All Adresses Mails in domaine
 ```
+
+Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Add-MailboxPermission -AccessRights FullAccess -User <DelegateAccount>
+
+
 Récupérer les d'un compte à toutes les boîtes aux lettres d'un domaine:
-$delegateaccount='<Delegate_Adress>'; Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<DomaineName>" } | get-MailboxPermission -User $delegateaccount
+Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<DomaineName>" } | get-MailboxPermission -User <DelegateAccount>
 ```
 
 
-## Exchange 2019 PowerShell - 
+## Exchange 2019 PowerShell - Delegate access to All Adresses mails in Domaine To an Address Mail
 ```
-ADPAM : Délégation BAL Migration@adpam.asso.fr à toutes les BAL :
-Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@adpam.asso.fr" }
-Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@adpam.asso.fr" } | Select-Object PrimarySmtpAddress, DisplayName, servername, Database | Format-Table
-Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@adpam.asso.fr" } | Add-MailboxPermission -AccessRights FullAccess -User migration@adpam.asso.fr
+Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" }
+Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Select-Object PrimarySmtpAddress, DisplayName, servername, Database | Format-Table
+Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Add-MailboxPermission -AccessRights FullAccess -User <DelegateAccount>
 ```
 
 
-## Exchange 2019 PowerShell - 
+## Exchange 2019 PowerShell - Get les adresses Mail + Les Alias + Les Forward
 ```
-Get les adresses Mail + Les Alias + Les Forward
 Get-Mailbox -ResultSize unlimited | Where-Object { $_.EmailAddresses -like "*@albertdemun.fr" } | Select-Object DisplayName, ForwardingAddress, @{Name="PrimaryEmailAddress";Expression={$_.PrimarySmtpAddress}}, @{Name="Aliases";Expression={$_.EmailAddresses -replace '^.*?([^@]+)@albertdemun\.fr$', '$1'}} | Export-Csv -Path C:\tmp\albertdemun.fr.csv -NoTypeInformation -Encoding UTF8
 ```
 
 
-## Exchange 2019 PowerShell - 
+## Exchange 2019 PowerShell - Get MoveRequest
 ```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
+Get-MoveRequest
 ```
 
 
-## Exchange 2019 PowerShell - 
+## Exchange 2019 PowerShell - Get MoveRequest In Porcentage
 ```
-
+Get-MoveRequest | ForEach-Object { $stats = Get-MoveRequestStatistics -Identity $_.Identity; "$($stats.TargetMailbox) - Percentage Completion: $($stats.PercentComplete)%" }
 ```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
-## Exchange 2019 PowerShell - 
-```
-
-```
-
-
