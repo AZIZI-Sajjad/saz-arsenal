@@ -30,8 +30,10 @@ lynx http://$IP/admin -> Paste the ADMIN_TOKEN
 
 
 ## Vaultwarden - Install Container Container conttected to the Physical + SSL LetsEncrypt ????????????????????????????????
-/etc/letsencrypt/archive/zmar.reseauxnet.fr
+
 ```
+    #### Ref: https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS
+    #### /etc/letsencrypt/archive/mydomain
 IP="<Container_IP>"
 MySecretPassword=$(pwgen --capitalize --numerals --symbols -1 1 1 -r o0O1IIlij\:\'\`\,\.\!\;\^\~\{\}\"\<\>\(\)\[\]\|\/\\)
     #### MySecretPassword -> Used to generate ADMIN_TOKEN
