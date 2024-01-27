@@ -89,3 +89,4 @@ services:
 volumes:
   vaultwarden_vol:
   mariadb_vol:
+```

@@ -44,3 +44,8 @@ sudo ip route add <Net_ID>/<Subnet_Prefix> via <GateWay_IP>
 letsencrypt --apache -d <Domaine> --agree-tos
 ```
 
+
+## Linux - base64 Encoding 
+```
+echo <string> | base64
+```
