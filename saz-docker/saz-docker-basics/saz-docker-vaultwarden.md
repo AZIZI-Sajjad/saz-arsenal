@@ -35,7 +35,7 @@ lynx http://$IP/admin -> Paste the ADMIN_TOKEN
     #### Ref: https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS
     #### /etc/letsencrypt/archive/mydomain
 IP="<Container_IP>"
-MySecretPassword=$(pwgen --capitalize --numerals --symbols -1 1 1 -r o0O1IIlij\:\'\`\,\.\!\;\^\~\{\}\"\<\>\(\)\[\]\|\/\\)
+MySecretPassword=$(pwgen --capitalize --numerals --symbols -1 32 1 -r o0O1IIlij\:\'\`\,\.\!\;\^\~\{\}\"\<\>\(\)\[\]\|\/\\)
     #### MySecretPassword -> Used to generate ADMIN_TOKEN
     #### macnet3-0 -> Is a DockerNork type "macvlan"
 ZMAR_TOKEN=$(echo -n $MySecretPassword | sudo argon2 "$(openssl rand -base64 32)" -e -id -k 65540 -t 3 -p 4 | sed 's#\$#\$\$#g')
