@@ -7,21 +7,21 @@
 #cat/SAJJAD
 #tag/linux-letsencrypt
 
-## Linux letencrypt - generate a certificate
+## Linux letsencrypt - generate a certificate
 ```
 sudo letsencrypt --apache -d <mon_domaine> --agree-tosµ
 
 ```
 
-## Linux letencrypt - certificate files location
+## Linux letsencrypt - certificate files location
 ```
-    #### Linux letencrypt - certificate files location
+    #### Linux letsencrypt - certificate files location
 cd /etc/letsencrypt/live/<mon_domaine>
 cd /etc/letsencrypt/archive/<mon_domaine>
 ```
 
 
-## Linux letencrypt - README
+## Linux letsencrypt - README
 ```
 This directory contains your keys and certificates.
 
@@ -39,7 +39,7 @@ We recommend not moving these files. For more information, see the Certbot
 User Guide at https://certbot.eff.org/docs/using.html#where-are-my-certificates.
 ```
 
-## Linux letencrypt - generate PFX Certificate
+## Linux letsencrypt - generate PFX Certificate
 ```
 sudo openssl pkcs12 -export -out cert.pfx -inkey privkey1.pem -in cert1.pem -certfile chain1.pem
 ```
