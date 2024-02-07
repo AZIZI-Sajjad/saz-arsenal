@@ -115,7 +115,7 @@ sudo docker network crete <New_Docker_Network_Name>
 
 ## Docker - Create Network Connected to Physical Network ( MACVLAN )
 ```
-    #### 1- Crete Docker Network type Overlay
+    #### 1- Crete Docker Network type MACVLAN
     sudo docker network create -d macvlan \
         --subnet=<Net_ID>/<Subnet_Prefix> \
         --ip-range=<Net_ID>/<Subnet_Prefix> \

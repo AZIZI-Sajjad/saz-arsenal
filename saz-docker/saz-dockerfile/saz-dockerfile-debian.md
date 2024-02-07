@@ -16,7 +16,7 @@ nano -c <Dockerfile_Name>
     FROM debian
     RUN rm -rf /var/lib/apt/lists/*
     RUN apt-get update
-    RUN apt-get install -y iputils-ping traceroute coreutils net-tools vim nano curl iproute2 openssh-server openssh-client sshpass
+    RUN apt-get install -y iputils-ping traceroute coreutils net-tools vim nano curl iproute2 openssh-server openssh-client sshpass netcat-openbsd
     ENV TZ="Europe/Paris"
     RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
     ENV LANG en_US.UTF-8
