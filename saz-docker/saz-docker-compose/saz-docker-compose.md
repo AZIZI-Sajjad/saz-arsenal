@@ -52,8 +52,37 @@ docker-compose down
 ```
 
 
+## Docker-Compose - Remove a service & related Doker Network & VOLUMES
+```
+docker-compose down
+```
+
+
 ## Docker-Compose - Kill a service
 ```
 docker-compose kill
 ```
 
+
+## Docker-Compose - Show Images built bu docker compose
+```
+docker-compose images
+```
+
+
+## Docker-Compose - Remove Image built by docker compose
+```
+docker-compose rm
+```
+
+
+## Docker-Compose - Show Docker compose LOGS
+```
+docker-compose logs
+```
+
+
+## Docker-Compose - Show Docker compose LOGS continuously
+```
+docker-compose logs -f
+```
