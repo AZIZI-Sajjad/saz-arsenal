@@ -8,32 +8,32 @@
 #tag/docker-swarm
 ```
 
-## Docker Swarm - Initiate Swarm Cluster 
+## Docker Swarm Cluster - Initiate Swarm Cluster 
 ```
 docker swarm init
 ```
 
 
-## Docker Swarm - Joint a Worker to Cluster
+## Docker Swarm Cluster - Joint a Worker to Cluster
 ```
   ## Get join commande at cluster creation ## -> docker swarm init
 docker swarm jopint --token <TOKEN>
 ```
 
 
-## Docker Swarm - Swarm et Members (Managers & Workers)
+## Docker Swarm Cluster - Swarm et Members (Managers & Workers)
 ```
 docker node ls
 ```
 
 
-## Docker Swarm - Inspect Cluster's nodes
+## Docker Swarm Cluster - Inspect Cluster's nodes
 ```
 docker node inspect <Membre_Name>
 ```
 
 
-## Docker Swarm - Get specific information from inspect
+## Docker Swarm Cluster - Get specific information from inspect
 ```
   #### Exempe:
 docker node ispect <Node_Name> --format "{{ .Status.Addr}}"
@@ -41,19 +41,19 @@ docker node ispect <Node_Name> --format "{{ .Status.State}}"
 ```
 
 
-## Docker Swarm - List swarm services (containers) statues
+## Docker Swarm Cluster - List swarm services (containers) statues
 ```
 docker node ps
 ```
 
 
-## Docker Swarm - Remove Manager Role of Worker
+## Docker Swarm Cluster - Remove Manager Role of Worker
 ```
 docker node demote <Worker_Node_Name>
 ```
 
 
-## Docker Swarm - Remoev a Worer from Swarm Cluster 
+## Docker Swarm Cluster - Remoev a Worer from Swarm Cluster 
 ```
     #### 1- Connect to worker via SSH
     #### 2- Stop swarm service :
@@ -62,7 +62,7 @@ docker swarm leave
 ```
 
 
-## Docker Swarm - Update Node's Informations
+## Docker Swarm Cluster - Update Node's Informations
 ```
 --availability string           # Active / Pause / Darin 
                                 # Active: 
@@ -76,7 +76,7 @@ docker swarm leave
 ```
 
 
-## Docker Swarm - Add Label "TAG" to a Cluster node:
+## Docker Swarm Cluster - Add Label "TAG" to a Cluster node:
 ```
 docker node node update --label-add <Label_key>=<Label_value> <Worker_Node_Name>
 
