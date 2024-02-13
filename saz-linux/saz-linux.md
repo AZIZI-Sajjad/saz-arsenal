@@ -49,3 +49,10 @@ letsencrypt --apache -d <Domaine> --agree-tos
 ```
 echo <string> | base64
 ```
+
+
+## Linux - change user Shell to BASH 
+```
+chsh -s /bin/bash <User_Name>
+```
+
