@@ -93,3 +93,38 @@ Get-MoveRequest
 ```
 Get-MoveRequest | ForEach-Object { $stats = Get-MoveRequestStatistics -Identity $_.Identity; "$($stats.TargetMailbox) - Percentage Completion: $($stats.PercentComplete)%" }
 ```
+
+
+## Exchange 2019 PowerShell - Get All MailBoxes size + Adresses + ALias and save as csv File
+```
+Get-Mailbox -ResultSize unlimited | sort-object | Select-Object name,alias,servername,ProhibitSendQuota,IssueWarningQuota,MaxReceiveSize,MaxSendSize,DisplayName,Database,PrimarySmtpAddress,ProhibitSendReceiveQuota,@{n="Size(MB)";e = {$MBXstat = Get-MailboxStatistics $_.name; $MBXstat.totalItemsize.value.ToMB()}},@{n="Items"; e = {$MBXstat = Get-MailboxStatistics $_.name ; $MBXstat.itemcount; $MBXstat.storageLimitStatus}},@{n="LastLogon"; e=  {$MBXstat = Get-MailboxStatistics $_.name ; $MBXstat.LastLogonTime}} | Export-Csv -NoTypeInformation -delimiter ";" exportsizeBAL_$(get-date -f yyyy-MM-dd_T_HH_mm_ss).csv
+```
+
+
+## Exchange 2019 PowerShell - Move ALL MailBox of a domaine to another DataBase
+```
+Get-Mailbox -Database <Source_DataBase> -Filter {EmailAddresses -like '*@<Domaine_Name>'} | New-MoveRequest -TargetDatabase <Target_DataBase>
+```
+
+
+## Exchange 2019 PowerShell - Get MoveResquest and filter by TargetDataBase 1
+```
+Get-MoveRequest | Where-Object { $_.TargetDatabase -eq "<Target_DataBase>" }
+```
+
+
+## Exchange 2019 PowerShell - Get MoveResquest and filter by TargetDataBase 2
+```
+Get-MoveRequest | Where-Object { $_.TargetDatabase -eq "<Target_DataBase1>" -or $_.TargetDatabase -eq "<Target_DataBase2>" }
+```
+
+
+## Exchange 2019 PowerShell - Get All MailBoxes size + Adresses + ALias and save as csv File
+```
+Get-MoveRequest | ForEach-Object { $stats = Get-MoveRequestStatistics -Identity $_.Identity; "$($_.TargetMailbox) - Percentage Completion: $($stats.PercentComplete)%" }
+```
+
+
+
+
+
