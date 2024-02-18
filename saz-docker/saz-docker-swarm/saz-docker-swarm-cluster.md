@@ -39,9 +39,41 @@ docker node ls
 ```
 
 
+## Docker Swarm Cluster - Swarm et Members (Managers & Workers)
+```
+    #### Drain : No service on the Node and Shut Down existing Service(s) on This node
+docker node update --availability drain <Node-Name>
+```
+
+
+## Docker Swarm Cluster - destroy cluster
+```
+    #### Leave on all Neouds (Workers & Managers) if necessary use --froce
+docker swarm leave --force 
+```
+
+
 ## Docker Swarm Cluster - Inspect Cluster's nodes
 ```
 docker node inspect <Membre_Name>
+```
+
+
+## Docker Swarm Cluster - Inspect Cluster's nodes
+```
+docker node inspect <Membre_Name> --pretty
+```
+
+
+## Docker Swarm Cluster - Promote Manager Rule to orkers
+```
+docker node promote <Worker1-Name> <Worker2-Name> ... <WorkerN-Name>
+```
+
+
+## Docker Swarm Cluster - Demote Manager Role from Manager
+```
+docker node demote <MAnager1-Name> <MAnager2-Name> ... <MAnagerN-Name>
 ```
 
 
@@ -81,7 +113,7 @@ docker swarm leave
                                 # Pause : 
                                 # Darin : Ne pas utiliser le Manager en tant que Worker, il porte de conteneurs 
 
-  --label-add -list               # Ajouter des tags, ou des Label au node -> à définir en format key=value
+--label-add -list               # Ajouter des tags, ou des Label au node -> à définir en format key=value
 --label-rm list                 # supprimer des tag ou des label du node
 --role string                   # worker / manager -> Changer le rôle du node
 
@@ -90,10 +122,10 @@ docker swarm leave
 
 ## Docker Swarm Cluster - Add Label "TAG" to a Cluster node:
 ```
-docker node node update --label-add <Label_key>=<Label_value> <Worker_Node_Name>
+docker node node update --label-add <Labe1l_key>=<Label1_value> --label-add <Label2_key>=<Label2_value> <Worker_Node_Name>
 
     #### Exemple : 
-    # docker node node update --label-add dd=ssd worker00
+    # docker node node update --label-add dd=ssd --label-add bar=baz worker00
     # docker node inspect --fromat "{{ .Spec.Labels }}" worker00
 
 ```

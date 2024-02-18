@@ -50,27 +50,48 @@ docker service create \
 ```
 
 
-## Docker Swarm Service - Liste services (Containers)
+## Docker Swarm Service - Liste services (Containers) - Get Container {{ ID }} - {{ Name }} - {{ Mode }}- {{ Replicas }} - {{ Image }} - {{ Ports }} 
 ```
 docker service ls
 ```
 
 
-## Docker Swarm Service - inspect service (Container)
+## Docker Swarm Service - inspect service (Container) - {{ ID }} - {{ NAME }}  - {{ IMAGE }}  - {{ NODE }}  - {{ DISIRED STATE }}  - {{ CURRENT STATE }}  - {{ ERROR }}  - {{ PORTS }}
 ```
 docker service ps <Swarm_Service_Name>
 ```
 
 
-## Docker Swarm Service - Create a service using an image on a private registry
+## Docker Swarm Service - Scale a service (Change Nomber of Replicas -> Nodes run the serviec) 
 ```
-  #### 1- Login to private registery
-docker login registry.example.com
+  #### We can choose more than or less than
+docker service scale <Service_Name>=<Number_Of_Neouds>
+```
 
-  #### 2- create sercie 
-docker service  create \
---with-registry-auth \
---name <Service_Name> registry.example.com/<Image_name>:<Image_Version>
+
+## Docker Swarm Service - Scale a service On Nodes - Mono Lable
+```
+docker service scale <Service_Name> \
+  replicas <Number_Of_Neouds> \
+  --constraint node.labels.region==<Label-1>
+  --constraint node.labels.region==<Label-2>
+```
+
+
+## Docker Swarm Service - Scale a service On Nodes - Multi Lables
+```
+docker service scale <Service_Name> \
+  replicas <Number_Of_Neouds> \
+  --constraint node.labels.region==<Tag_Name>
+```
+
+
+## Docker Swarm Service - Scale a service On Nodes by Name
+```
+docker service scale \
+  --mode=replicated \
+  --replicas=<Actuel_Repicas+1> \
+  --constraint 'node.hostname==<Worker_Name>' <Service_Name>
 ```
 
 
@@ -86,18 +107,29 @@ docker service update \
 ```
 
 
+## Docker Swarm Service - Inspect Service
+```
+docker service inspect <Service_Name> | more
+```
+
+
+## Docker Swarm Service - Remove Service
+```
+docker service rm <Service_Name>
+```
+
+
+## Docker Swarm Service - RollBack Service to privius configuation
+```
+docker service rollback <Service_Name>
+```
+
 ## Docker Swarm Service - create a service with DIGEST 
 ```
   # Exemple:
 docker service create \
   --name=<Service_Name> \
   ubuntu:16.04@sha256:35bc48a1ca97c3971611dc4662d08d131869daa692acb281c7e9e052924e38b1
-```
-
-
-## Docker Swarm Service - Inspect images's GIDEST
-```
-docker inspect <Image_name>:<Image_Version>
 ```
 
 
