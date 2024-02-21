@@ -28,8 +28,40 @@
 
 ```
 
-## Linux-iptables - 
+
+## DATA CENTER - iptables Install Permanent - UBUNTU 
+```
+apt install iptables-persistent
+apt-get install iptables-persistent
+systemctl is-enabled netfilter-persistent.service
+systemctl enable netfilter-persistent.service
+systemctl status netfilter-persistent.service
 ```
 
+
+## DATA CENTER - iptables Install Permanent - CentOS
+```
+yum install iptables-services
+systemctl enable iptables
+systemctl enable ip6tables
+systemctl status iptables
 ```
 
+
+## DATA CENTER - iptables Permanent - Backup
+```
+iptables-save -c > /etc/iptables/rules.v4
+```
+
+
+## DATA CENTER - iptables Permanent - Restore
+```
+iptables-restore < /etc/iptables/rules.v4
+```
+
+
+## DATA CENTER - iptables Permanent - Backup & Restore
+```
+iptables-save -c > /etc/iptables/rules.v4
+iptables-restore < /etc/iptables/rules.v4
+```
