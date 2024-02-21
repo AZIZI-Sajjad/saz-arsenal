@@ -1,148 +1,132 @@
-# saz-docker-swarm-service
+# ssaz-docker-swarm
 ```
 #plateform/windows & Linux
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
 #cat/SAJJAD
-#tag/docker-swarm-service
+#tag/docker-swarm
 ```
 
-## Docker Swarm Service - Manual
+## Docker Swarm Cluster - Initiate Swarm Cluster 
 ```
-Usage:  docker service COMMAND
-
-Manage Swarm services
-
-Commands:
-  create      Create a new service
-  inspect     Display detailed information on one or more services
-  logs        Fetch the logs of a service or task
-  ls          List services
-  ps          List the tasks of one or more services
-  rm          Remove one or more services
-  rollback    Revert changes to a service's configuration
-  scale       Scale one or multiple replicated services
-  update      Update a service
-
-Run 'docker service COMMAND --help' for more information on a command.
-
+docker swarm init
 ```
 
 
-## Docker Swarm Service - Create a Service as service on all neouds in Swarm cluster 
+## Docker Swarm Cluster - Get join Token to join a WORKER on Manager
 ```
-docker service create \
-  --publish \
-    <host_port>:<Service_port> \
-  --name <Service_Name> \
-    <Image_name>:<Image_Version>
+docker swarm join-token worker
 ```
 
 
-## Docker Swarm Service - Create a Service as service on all neouds in Swarm cluster + Nomber of Noeuds that run the service
+## Docker Swarm Cluster - Get join Token to join a MANAGER on existing Manager
 ```
-docker service create \
-  --publish \
-  <host_port>:<Service_port> \
-  --name <Service_Name> \
-  --replicas <Nomber_Of_Replicas> <Image_name>:<Image_Version>
+docker swarm join-token manager
 ```
 
 
-## Docker Swarm Service - Liste services (Containers)
+## Docker Swarm Cluster - Joint a Worker to Cluster
 ```
-docker service ls
-```
-
-
-## Docker Swarm Service - inspect service (Container)
-```
-docker service ps <Swarm_Service_Name>
+  ## Get join commande at cluster creation ## -> docker swarm init
+docker swarm jopint --token <TOKEN>
 ```
 
 
-## Docker Swarm Service - Create a service using an image on a private registry
+## Docker Swarm Cluster - Swarm et Members (Managers & Workers)
 ```
-  #### 1- Login to private registery
-docker login registry.example.com
-
-  #### 2- create sercie 
-docker service  create \
---with-registry-auth \
---name <Service_Name> registry.example.com/<Image_name>:<Image_Version>
+docker node ls
 ```
 
 
-## Docker Swarm Service - Update a service "EXEMPLE ngnix"
+## Docker Swarm Cluster - Swarm et Members (Managers & Workers)
 ```
-  #### Add port to container
-docker service update \
-  --publish-add 80 my_web
-
-  #### Remove port from container
-docker service update \
-  --publish-remove 80 my_web
+    #### Drain : No service on the Node and Shut Down existing Service(s) on This node
+docker node update --availability drain <Node-Name>
 ```
 
 
-## Docker Swarm Service - create a service with DIGEST 
+## Docker Swarm Cluster - destroy cluster
 ```
-  # Exemple:
-docker service create \
-  --name=<Service_Name> \
-  ubuntu:16.04@sha256:35bc48a1ca97c3971611dc4662d08d131869daa692acb281c7e9e052924e38b1
+    #### Leave on all Neouds (Workers & Managers) if necessary use --froce
+docker swarm leave --force 
 ```
 
 
-## Docker Swarm Service - Inspect images's GIDEST
+## Docker Swarm Cluster - Inspect Cluster's nodes
 ```
-docker inspect <Image_name>:<Image_Version>
-```
-
-
-## Docker Swarm Service - Mode Global - Service on All Veouds in Swarm Cluster
-```
-docker service create \
-  --mode global \
-  --publish mode=host,target=<host_port>,published=<Service_port> \
-  --name=<Service_Name> \
-  <<Image_name>:<Image_Version>>
+docker node inspect <Membre_Name>
 ```
 
 
-## Docker Swarm Service - Mode Global - Run Service on Defined Network
+## Docker Swarm Cluster - Inspect Cluster's nodes
 ```
-docker service create \
-  --replicas <Nombrer_Of_Replicas> \
-  --publish mode=host,target=<host_port>,published=<Service_port> \
-  --name=<Service_Name> \
-  --network=<OverLay_Network_Name> \
-  <<Image_name>:<Image_Version>>
+docker node inspect <Membre_Name> --pretty
 ```
 
 
-## Docker Swarm Service - Create a Service as service on all neouds in Swarm cluster 
+## Docker Swarm Cluster - Promote Manager Rule to orkers
 ```
-docker service create \
-  --publish \
-    <host_port>:<Service_port> \
-  --name <Service_Name> \
-    <Image_name>:<Image_Version>
+docker node promote <Worker1-Name> <Worker2-Name> ... <WorkerN-Name>
 ```
 
 
-## Docker Swarm Service - Connect a Service as service on all neouds in Swarm cluster 
+## Docker Swarm Cluster - Demote Manager Role from Manager
 ```
-docker service pdate \
-  --network-add <OverLay_Network_Name> \
-    <Service_Name>
+docker node demote <MAnager1-Name> <MAnager2-Name> ... <MAnagerN-Name>
 ```
 
 
-## Docker Swarm Service - DisConnect a Service as service on all neouds in Swarm cluster 
+## Docker Swarm Cluster - Get specific information from inspect
 ```
-docker service pdate \
-  --network-rm <OverLay_Network_Name> \
-    <Service_Name>
+  #### Exempe:
+docker node ispect <Node_Name> --format "{{ .Status.Addr}}"
+docker node ispect <Node_Name> --format "{{ .Status.State}}"
 ```
+
+
+## Docker Swarm Cluster - List swarm services (containers) statues
+```
+docker node ps
+```
+
+
+## Docker Swarm Cluster - Remove Manager Role of Worker
+```
+docker node demote <Worker_Node_Name>
+```
+
+
+## Docker Swarm Cluster - Remoev a Worer from Swarm Cluster 
+```
+    #### 1- Connect to worker via SSH
+    #### 2- Stop swarm service :
+docker swarm leave
+    #### 3- Remoe the Worke from Node List
+```
+
+
+## Docker Swarm Cluster - Update Node's Informations
+```
+--availability string           # Active / Pause / Darin 
+                                # Active: 
+                                # Pause : 
+                                # Darin : Ne pas utiliser le Manager en tant que Worker, il porte de conteneurs 
+
+--label-add -list               # Ajouter des tags, ou des Label au node -> à définir en format key=value
+--label-rm list                 # supprimer des tag ou des label du node
+--role string                   # worker / manager -> Changer le rôle du node
+
+```
+
+
+## Docker Swarm Cluster - Add Label "TAG" to a Cluster node:
+```
+docker node node update --label-add <Labe1l_key>=<Label1_value> --label-add <Label2_key>=<Label2_value> <Worker_Node_Name>
+
+    #### Exemple : 
+    # docker node node update --label-add dd=ssd --label-add bar=baz worker00
+    # docker node inspect --fromat "{{ .Spec.Labels }}" worker00
+
+```
+
