@@ -7,7 +7,7 @@
 #cat/SAJJAD
 #tag/curl
 
-## PowerShell - Get FQDN 1
+## PowerShell - Get FQDN + All IP
 ```
 [System.Net.Dns]::GetHostByName($env:computerName)
 ```
@@ -26,6 +26,13 @@
 ```
 [System.Net.Dns]::GetHostByName('IP_OR-DNS_NAME')
 ```
+
+
+## PowerShell - Get Serial Number
+```
+wmic bios get serialnumber
+```
+
 
 ## PowerShell - Lancer Windows update
 ```

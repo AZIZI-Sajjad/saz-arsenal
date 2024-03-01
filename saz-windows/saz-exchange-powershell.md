@@ -52,6 +52,12 @@ Get-MailboxExportRequestStatistics -Identity <AdressMail>
 ```
 
 
+## Exchange 2019 PowerShell - Get Mailbox Export Request's Statistics
+```
+Get-MailboxExportRequest | Get-MailboxExportRequestStatistics
+```
+
+
 ## Exchange 2019 PowerShell - Give Access total on a Adressse Mail to Another Adresse Mail
 ```
 Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Select-Object PrimarySmtpAddress, DisplayName, servername, Database | Format-Table
@@ -60,11 +66,10 @@ Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomai
 
 ## Exchange 2019 PowerShell - Give Access total on a Adressse Mail to All Adresses Mails in domaine
 ```
-
 Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Add-MailboxPermission -AccessRights FullAccess -User <DelegateAccount>
 
 
-Récupérer les d'un compte à toutes les boîtes aux lettres d'un domaine:
+    # Check:
 Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<DomaineName>" } | get-MailboxPermission -User <DelegateAccount>
 ```
 
@@ -125,6 +130,15 @@ Get-MoveRequest | ForEach-Object { $stats = Get-MoveRequestStatistics -Identity 
 ```
 
 
+## Exchange 2019 PowerShell - Get Mailbox Export Request In Failed State
+```
+Get-MailboxExportRequest | ?{$_.Status -eq "Failed"}
+```
 
+
+## Exchange 2019 PowerShell - Remove  Mailbox Export Request In Failed State
+```
+Get-MailboxExportRequest -Status Failed | Remove-MailboxExportRequest
+```
 
 
