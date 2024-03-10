@@ -14,7 +14,7 @@
 mkdir <Docker-compose.yml_file_location>
     ##-> mkdir /home/sda/docker/docker-compose.d/mariadb
 cd <Docker-compose.yml_file_location>
-nano docker-compose-
+nano docker-compose.yml
     ##-> Use root/<Mariadb_Root_Password> as user/password credentials
     version: '3.1'
     services:

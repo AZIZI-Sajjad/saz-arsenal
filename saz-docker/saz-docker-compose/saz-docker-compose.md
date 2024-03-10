@@ -86,3 +86,21 @@ docker-compose logs
 ```
 docker-compose logs -f
 ```
+
+
+## Docker-Compose - Define volume's local location in Docker compose file
+```
+volumes:
+  vaultwarden_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /chemin/absolu/sur/votre/machine/local
+  mariadb_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /autre/chemin/absolu/sur/votre/machine/local
+```
