@@ -96,11 +96,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /chemin/absolu/sur/votre/machine/local
+      device: <chemin_absolu_sur_votre_machine_local>
   mariadb_vol:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /autre/chemin/absolu/sur/votre/machine/local
+      device: <autre_chemin_absolu_sur_votre_machine_local>
 ```
