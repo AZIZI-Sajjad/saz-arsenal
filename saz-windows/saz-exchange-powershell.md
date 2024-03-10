@@ -52,6 +52,12 @@ Get-MailboxExportRequestStatistics -Identity <AdressMail>
 ```
 
 
+## Exchange 2019 PowerShell - Get Mailbox Export Request's Statistics
+```
+Get-MailboxExportRequest | Get-MailboxExportRequestStatistics
+```
+
+
 ## Exchange 2019 PowerShell - Give Access total on a Adressse Mail to Another Adresse Mail
 ```
 Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Select-Object PrimarySmtpAddress, DisplayName, servername, Database | Format-Table
@@ -60,11 +66,10 @@ Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomai
 
 ## Exchange 2019 PowerShell - Give Access total on a Adressse Mail to All Adresses Mails in domaine
 ```
-
 Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<MailDomaine>" } | Add-MailboxPermission -AccessRights FullAccess -User <DelegateAccount>
 
 
-Récupérer les d'un compte à toutes les boîtes aux lettres d'un domaine:
+    # Check:
 Get-Mailbox -ResultSize Unlimited | where {$_.emailAddresses -like "*@<DomaineName>" } | get-MailboxPermission -User <DelegateAccount>
 ```
 
@@ -93,3 +98,47 @@ Get-MoveRequest
 ```
 Get-MoveRequest | ForEach-Object { $stats = Get-MoveRequestStatistics -Identity $_.Identity; "$($stats.TargetMailbox) - Percentage Completion: $($stats.PercentComplete)%" }
 ```
+
+
+## Exchange 2019 PowerShell - Get All MailBoxes size + Adresses + ALias and save as csv File
+```
+Get-Mailbox -ResultSize unlimited | sort-object | Select-Object name,alias,servername,ProhibitSendQuota,IssueWarningQuota,MaxReceiveSize,MaxSendSize,DisplayName,Database,PrimarySmtpAddress,ProhibitSendReceiveQuota,@{n="Size(MB)";e = {$MBXstat = Get-MailboxStatistics $_.name; $MBXstat.totalItemsize.value.ToMB()}},@{n="Items"; e = {$MBXstat = Get-MailboxStatistics $_.name ; $MBXstat.itemcount; $MBXstat.storageLimitStatus}},@{n="LastLogon"; e=  {$MBXstat = Get-MailboxStatistics $_.name ; $MBXstat.LastLogonTime}} | Export-Csv -NoTypeInformation -delimiter ";" exportsizeBAL_$(get-date -f yyyy-MM-dd_T_HH_mm_ss).csv
+```
+
+
+## Exchange 2019 PowerShell - Move ALL MailBox of a domaine to another DataBase
+```
+Get-Mailbox -Database <Source_DataBase> -Filter {EmailAddresses -like '*@<Domaine_Name>'} | New-MoveRequest -TargetDatabase <Target_DataBase>
+```
+
+
+## Exchange 2019 PowerShell - Get MoveResquest and filter by TargetDataBase 1
+```
+Get-MoveRequest | Where-Object { $_.TargetDatabase -eq "<Target_DataBase>" }
+```
+
+
+## Exchange 2019 PowerShell - Get MoveResquest and filter by TargetDataBase 2
+```
+Get-MoveRequest | Where-Object { $_.TargetDatabase -eq "<Target_DataBase1>" -or $_.TargetDatabase -eq "<Target_DataBase2>" }
+```
+
+
+## Exchange 2019 PowerShell - Get All MailBoxes size + Adresses + ALias and save as csv File
+```
+Get-MoveRequest | ForEach-Object { $stats = Get-MoveRequestStatistics -Identity $_.Identity; "$($_.TargetMailbox) - Percentage Completion: $($stats.PercentComplete)%" }
+```
+
+
+## Exchange 2019 PowerShell - Get Mailbox Export Request In Failed State
+```
+Get-MailboxExportRequest | ?{$_.Status -eq "Failed"}
+```
+
+
+## Exchange 2019 PowerShell - Remove  Mailbox Export Request In Failed State
+```
+Get-MailboxExportRequest -Status Failed | Remove-MailboxExportRequest
+```
+
+

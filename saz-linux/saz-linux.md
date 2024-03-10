@@ -56,3 +56,8 @@ echo <string> | base64
 chsh -s /bin/bash <User_Name>
 ```
 
+
+## Linux - Generate Password without 
+```
+pwgen --capitalize --numerals --symbols -1 <Number_Of_Caracters> <Number_Of_password_To_Generate> -r o0O1IIl6b9q9ggqij\:\'\`\,\.\!\;\^\~\{\}\"\<\>\(\)\[\]\|\/\\
+```
