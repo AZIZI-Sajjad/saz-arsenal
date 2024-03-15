@@ -88,6 +88,12 @@ docker-compose logs -f
 ```
 
 
+
+## Docker-Compose - with docker-compose Project
+```
+docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --project-name '<Projet_Name>' restart
+```
+
 ## Docker-Compose - Define volume's local location in Docker compose file
 ```
 volumes:
@@ -104,3 +110,4 @@ volumes:
       o: bind
       device: <autre_chemin_absolu_sur_votre_machine_local>
 ```
+
