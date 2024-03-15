@@ -88,8 +88,27 @@ docker-compose logs -f
 ```
 
 
+<<<<<<< HEAD
 ## Docker-Compose - with docker-compose Project
 ```
 docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --project-name '<Projet_Name>' restart
 ```
 
+=======
+## Docker-Compose - Define volume's local location in Docker compose file
+```
+volumes:
+  vaultwarden_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /chemin/absolu/sur/votre/machine/local
+  mariadb_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /autre/chemin/absolu/sur/votre/machine/local
+```
+>>>>>>> 85159c740a0fc7441ed318ff09b73b02047153d9
