@@ -86,3 +86,10 @@ docker-compose logs
 ```
 docker-compose logs -f
 ```
+
+
+## Docker-Compose - with docker-compose Project
+```
+docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --project-name '<Projet_Name>' restart
+```
+
