@@ -110,4 +110,4 @@ volumes:
       o: bind
       device: /autre/chemin/absolu/sur/votre/machine/local
 ```
->>>>>>> 85159c740a0fc7441ed318ff09b73b02047153d9
+
