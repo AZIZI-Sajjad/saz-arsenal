@@ -88,6 +88,17 @@ docker-compose logs -f
 ```
 
 
+## Docker-Compose - Create project
+```
+docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --project-name '<Projet_Name>' up
+```
+
+
+## Docker-Compose - Create project and show Logs
+```
+docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --project-name '<Projet_Name>' up -d
+```
+
 
 ## Docker-Compose - with docker-compose Project
 ```

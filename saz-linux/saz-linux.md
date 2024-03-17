@@ -61,3 +61,19 @@ chsh -s /bin/bash <User_Name>
 ```
 pwgen --capitalize --numerals --symbols -1 <Number_Of_Caracters> <Number_Of_password_To_Generate> -r o0O1IIl6b9q9ggqij\:\'\`\,\.\!\;\^\~\{\}\"\<\>\(\)\[\]\|\/\\
 ```
+
+## linux - nc Check TCP (t) port - 1
+```
+nc -zvw<time_out> <IP> <Port>
+```
+
+## linux - nc Check TCP (t) port - 2
+```
+nc -zvtw<time_out> <IP> <Port>
+```
+
+
+## linux - nc Check UDP (u) port
+```
+nc -zvuw<time_out> <IP> <Port>
+```
