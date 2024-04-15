@@ -77,3 +77,29 @@ nc -zvtw<time_out> <IP> <Port>
 ```
 nc -zvuw<time_out> <IP> <Port>
 ```
+
+
+## linux - restart multi services
+```
+systemctl restart php7.4-fpm apache2
+```
+
+
+## linux - Get IP Publique 1
+```
+wget -qO- http://ifconfig.me ; echo
+```
+
+
+## linux - Get IP Publique 2
+```
+curl -k https://ifconfie.me
+```
+
+
+## linux - Get IP Publique 3
+```
+curl -k https://monip.org
+```
+
+
