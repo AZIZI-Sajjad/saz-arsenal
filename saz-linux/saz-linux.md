@@ -103,3 +103,13 @@ curl -k https://monip.org
 ```
 
 
+## linux - cat gz files - zcat
+```
+zcat *.gz
+```
+
+
+## linux - zgrep gz files - zcat
+```
+zgrep "pattern" *.gz
+```

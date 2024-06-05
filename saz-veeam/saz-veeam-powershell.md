@@ -58,7 +58,6 @@ Get-VBRJob -Name <Jobname> | Remove-VBRJob
 ```
 
 
-
 ## VEEAM PowerShell - Adding VM to Job by Variable
 ```
 $job = Get-VBRJob
@@ -66,7 +65,9 @@ Find-VBRViEntity -Name VM01 | Add-VBRViJobObject -Job $job
 ```
 
 
-
-
+## VEEAM PowerShell - Get E-Mail notification Settings
+```
+Get-VBRMailNotificationConfiguration
+```
 
 
