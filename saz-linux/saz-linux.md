@@ -113,3 +113,27 @@ zcat *.gz
 ```
 zgrep "pattern" *.gz
 ```
+
+
+## linux - start service
+```
+systemctl start <service_Name>
+```
+
+
+## linux - stop service - systemctl
+```
+systemctl start <service_Name>
+```
+
+
+## linux - restart service - systemctl
+```
+systemctl restart <service_Name>
+```
+
+
+## linux - Enable service - systemctl
+```
+systemctl enable <service_Name>
+```
