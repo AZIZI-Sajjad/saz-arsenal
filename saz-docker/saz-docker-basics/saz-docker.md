@@ -54,13 +54,13 @@ systemctl restart docker
 ```
 
 
-## Docker - connect to a container  interactively -> Via EXEC  
+## Docker - enter to a container  interactively -> Via EXEC  
 ```
 docker exec -it  <Container_Name> <bash_or_sh_mysql_etc>
 ```
 
 
-## Docker - connect to a container  interactively -> via ATTACH
+## Docker - enter to a container  interactively -> via ATTACH
 ```
 docker attach <Container_Name>
 ```
@@ -113,7 +113,7 @@ sudo docker network crete <New_Docker_Network_Name>
 ```
 
 
-## Docker - Create Network Connected to Physical Network ( MACVLAN )
+## Docker - Create macvlan Network Connected to Physical Network ( MACVLAN )
 ```
     #### 1- Crete Docker Network type MACVLAN
     sudo docker network create -d macvlan \
