@@ -142,3 +142,30 @@ Get-MailboxExportRequest -Status Failed | Remove-MailboxExportRequest
 ```
 
 
+## Exchange 2019 PowerShell - Get All Disconnected MailBox list
+```
+Get-MailboxStatistics -Database <Database> | Where-Object {$_.DisconnectDate -ne $null}
+```
+
+
+## Exchange 2019 PowerShell - Get All Disconnected MailBox list By DataBase
+```
+Get-MailboxDatabase | Get-MailboxStatistics | Where-Object {$_.DisconnectDate -ne $null} | Select-Object DisplayName,MailboxGuid,DisconnectDate,database
+```
+
+
+## Exchange 2019 PowerShell - Get All Disconnected MailBox list
+```
+Get-MailboxStatistics -Database "<DB_Name>" | Where-Object {$_.DisconnectDate -ne $null} | Select-Object DisplayName,MailboxGuid,DisconnectDate
+```
+
+
+## Exchange 2019 PowerShell - Connect a Disconnected MailBox - MailboxStatistics & _.DisconnectDate
+```
+        $MailboxGuid = <MailboxGuid>
+        $Database = <Database>
+        $UserPrincipalName = <Address_Mail>
+        $Server = <Server_FQDN>
+        Connect-Mailbox -Identity $MailboxGuid -Database $Database -User $UserPrincipalName
+```
+
