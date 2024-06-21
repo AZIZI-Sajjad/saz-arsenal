@@ -21,7 +21,7 @@ zmprov sa -v "mail=<Adress_Mail>"
 zmprov sa -v "mail=*@<Domaine>" 
 ```
 
-## zimbra - Get User's Information - Changed Pasword Time
+## zimbra - Get User's Information - Changed Pasword Time 
 ```
     # su zimbra
 zmprov sa -v "mail=<Adress_Mail>" | egrep '^mail:|zimbraPasswordModifiedTime:|^$'
