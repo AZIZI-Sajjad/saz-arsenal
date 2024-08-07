@@ -137,3 +137,16 @@ systemctl restart <service_Name>
 ```
 systemctl enable <service_Name>
 ```
+
+
+## linux - Network Debian -  Second IP on Second NIC
+```
+    #### Add the following lines to "/etc/network/interfaces"
+    #### nano -c /etc/network/interfaces
+auto <NIC_Name>
+iface NIC_Name> inet static
+    address <IP_Adresse>
+    netmask <SubnetMAsk>
+
+```
+
