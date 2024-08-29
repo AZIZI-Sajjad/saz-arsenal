@@ -150,3 +150,9 @@ iface NIC_Name> inet static
 
 ```
 
+
+## linux - share sftp ( sshfs )
+```
+sshfs -o allow_other,default_permissions -p <portNumber> <sftpUser>@<IP>:<sharePathOnRemoteServer> <LocalPathToMounttheShare>
+```
+
