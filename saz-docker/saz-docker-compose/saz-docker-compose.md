@@ -82,9 +82,15 @@ docker compose logs
 ```
 
 
-## Docker-Compose - Show Docker compose LOGS continuously
+## Docker-Compose - Show Docker compose LOGS continuously 1/2
 ```
-docker compose logs -f
+docker compose --file <Docker-compose-File.yml> --project-name <project-Name> logs -f
+```
+
+
+## Docker-Compose - Show Docker compose LOGS continuously 2/2
+```
+docker compose --project-name <project-Name> logs -f
 ```
 
 
