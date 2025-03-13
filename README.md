@@ -6,6 +6,6 @@ Download & copy this foler to arsenal instalaltion folder arsenal -> data -> che
 ##### Exemple:
 /home/sdtago/.local/lib/python3.8/site-packages/arsenal/data/cheats/saz-arsenal/saz-docker
 
-
+test
 
 
