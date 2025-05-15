@@ -2,9 +2,21 @@
 https://github.com/Orange-Cyberdefense/arsenal
 
 
-Download & copy this foler to arsenal instalaltion folder arsenal -> data -> cheats -> saz-arsenal
-##### Exemple:
-/home/sdtago/.local/lib/python3.8/site-packages/arsenal/data/cheats/saz-arsenal/saz-docker
+Arsenal - Installation & Personnalisation  
+
+
+mkdir ~/app/saz-arsenal  
+cd ~/app/saz-arsenal  
+git clone https://github.com/Orange-Cyberdefense/arsenal  
+rm -rf .git*  
+cd /data/cheats/  
+git clone https://github.com/AZIZI-Sajjad/saz-arsenal.git  
+sudo ln -s /home/sdunix/app/saz-arsenal/run /usr/local/bin/arsenal  
+
+
+nano -c ~/.bashrc  
+alias cdarsenal='cd /home/sdunix/app/saz-arsenal/arsenal/data/cheats/saz-arsenal'  
+alias codearsenal='code /home/sdunix/app/saz-arsenal/arsenal/data/cheats/saz-arsenal'  
 
 
 
