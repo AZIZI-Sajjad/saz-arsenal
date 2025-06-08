@@ -159,7 +159,15 @@ docker swarm init
 ```
 
 
-## Docker Get swarm join-token's manager
+## Docker remove volume
 ```
-docker docker swarm join-token manager
+docker volume rm <volume_Name>
 ```
+
+
+## Docker remove network
+```
+docker network rm <network_Name>
+```
+
+

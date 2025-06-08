@@ -90,7 +90,7 @@ docker compose --file <Docker-compose-File.yml> --project-name <project-Name> lo
 
 ## Docker-Compose - Show Docker compose LOGS continuously 2/2
 ```
-docker compose --project-name <project-Name> logs -f
+docker compose --project-name <project-Name -> Get-By: docker compose ls> logs -f
 ```
 
 
