@@ -4,7 +4,7 @@
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
-#cat/SAJJAD
+#cat/AZIZI-Sajjad
 #tag/linux-scripting
 
 ## linux-scripting - loop while -> /!\ exemple Sleep Time 0.5 seconde 

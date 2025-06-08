@@ -4,7 +4,7 @@
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
-#cat/SAJJAD
+#cat/AZIZI-Sajjad
 #tag/curl
 
 ## PowerShell - Get FQDN + All IP

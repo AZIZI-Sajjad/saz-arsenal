@@ -4,7 +4,7 @@
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
-#cat/SAJJAD
+#cat/AZIZI-Sajjad
 #tag/linux-bashrc
 
 ## linux-bashrc - ~/.bashrc Add backup fonction backupdir

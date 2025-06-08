@@ -4,7 +4,7 @@
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
-#cat/SAJJAD
+#cat/AZIZI-Sajjad
 #tag/ansible
 
 ## Ansible - Désactiver COW et séparer les étapes par des lignes en étoiles    ************************************************************

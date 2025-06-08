@@ -4,7 +4,7 @@
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
-#cat/SAJJAD
+#cat/AZIZI-Sajjad
 #tag/exchange-powershell
 
 ## Exchange 2019 PowerShell - Change BAL DataBase
