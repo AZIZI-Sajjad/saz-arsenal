@@ -111,6 +111,16 @@ docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --proje
 docker compose --file '/home/<Projet_Name>.fr/docker/docker-compose.yml' --project-name '<Projet_Name>' restart
 ```
 
+## Docker-Compose - Momory limit and cpu limit
+```
+  docker run -d \
+    --name <contenaire_Name> \
+    --memory="2g" \
+    --cpus="2.0" \
+    -p <Host_Port>:<Contenaire_Port> \
+    <image>:<latest_or_tag>
+```
+
 ## Docker-Compose - Define volume's local location in Docker compose file
 ```
 volumes:
