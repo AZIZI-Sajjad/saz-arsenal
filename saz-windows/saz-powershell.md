@@ -163,6 +163,11 @@ Write-Host "SerializationVersion: $($PSVersionTable.SerializationVersion)"
 Test-NetConnection -ComputerName <IP> -Port <port>
 ```
 
+## PowerShell - Get COM Ports
+```
+[System.IO.Ports.SerialPort]::getportnames()
+```
+
 ## PowerShell - CMD - Route Print with Filter
 ```
 route print | findstr <Net_ID_Or_IP_Or_A_Part_Of_Them>
