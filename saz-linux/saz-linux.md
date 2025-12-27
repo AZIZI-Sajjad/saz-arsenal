@@ -156,3 +156,17 @@ iface NIC_Name> inet static
 sshfs -o allow_other,default_permissions -p <portNumber> <sftpUser>@<IP>:<sharePathOnRemoteServer> <LocalPathToMounttheShare>
 ```
 
+
+## linux - diff Files
+```
+diff -r <First_File_To_Diff> <Seconde_File_To_Diff>
+```
+
+
+
+## linux - diff Folders (-r)
+```
+diff -r <First_Folder_To_Diff> <Seconde_Folder_To_Diff>
+```
+
+
