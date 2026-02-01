@@ -106,5 +106,5 @@ git remote set-url origin https://github.com/<git_UserName>/<project_Name>.git
 ## Linux - git - change project URL to SSH
 ```
   # git remote -v
-git remote set-url origin git@github.com:AZIZI-Sajjad/<project_Name>.git
+git remote set-url origin git@github.com:<git_UserName>/<project_Name>.git
 ```
