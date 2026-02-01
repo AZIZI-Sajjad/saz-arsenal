@@ -1,19 +1,21 @@
 # saz-kubernetes
-```
-#plateform/windows & Linux
+
+#plateform/Windows-Linux-MAC
 #target/local
 #cat/PRIVESC
 #cat/PERSIST
 #cat/AZIZI-Sajjad
 #tag/kubernetes
+
+## kubernetes - Installation on Debian/Ubuntu 
+```
+sudo su
+grep -E --color 'vmx|svm' /proc/cpuinfo
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
+mkdir -p /usr/local/bin/
+install minikube /usr/local/bin/
+minikube profile list
+minikube status
+minikube start --driver=<driver_name>
 ```
 
-## Kubernetes - copy into a container
-```
-kubectl cp <source_files_or_folder> <container_name>:<container_destination_DIR>
-```
-
-## Kubernetes - copy from a container
-```
-kubectl cp <container_name>:<container_destination_DIR> <source_files_or_folder>
-```

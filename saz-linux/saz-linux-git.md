@@ -72,3 +72,39 @@ git status
 ```
 
 
+## Linux - git - rebase projet with hit 
+```
+git pull origin master --rebase
+```
+
+
+## Linux - git - Error - Gitlab - git erreurs - ! [rejected]  master -> master (fetch first)
+```
+git pull origin master --rebase
+```
+
+
+## Linux - git - Gitlab - Reset ROOT Pawword
+```
+$gitlab-rake "gitlab:password:reset"
+```
+
+
+## Linux - git - get project link to SSH
+```
+git remote -v
+```
+
+
+## Linux - git - change project URL to HTTP
+```
+  # git remote -v
+git remote set-url origin https://github.com/<git_UserName>/<project_Name>.git
+```
+
+
+## Linux - git - change project URL to SSH
+```
+  # git remote -v
+git remote set-url origin git@github.com:AZIZI-Sajjad/<project_Name>.git
+```
