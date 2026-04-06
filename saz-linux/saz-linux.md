@@ -170,3 +170,10 @@ diff -r <First_Folder_To_Diff> <Seconde_Folder_To_Diff>
 ```
 
 
+## linux - find et delete multi filtres -> Dans cet exemple : Chapitre-*-resume.md & Chapitre-*.txt
+```
+find <source_folder> \
+  \( -name '<first_filtre_regex>' -o -name '<second_filtre_regex>' -o -name '<third_filtre_regex>' \) \
+  -type f \
+  -delete
+```
