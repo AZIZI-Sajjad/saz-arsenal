@@ -9,10 +9,10 @@
 
 ## Python - Create and enter nenv - virtuel environnement 
 ```
-### Create nenv
+'#### Create nenv'
 python3 -m venv .venv
 
-### Activate nenv
+'#### Activate nenv'
 source .venv/bin/activate
 ```
 
