@@ -106,3 +106,31 @@ CSRF qui signifie Cross Site Request Forgery fait référence à une attaque exp
 ```
 Langage de programmation reposant sur le paradigme Objet. Il a aussi pour caractéristique d'être fortement typé, compilé et repose sur l'utilisation d'une JVM (Java Virtual Machine) pour l'exécution.
 ```
+
+## TOP 10 Vulnérabilités des APP WEB
+```
+- A01 : contrôles d'accès défaillants
+- A02 : défaillances cryptographiques
+- A03 : injection
+- A04 : conception non sécurisée
+- A05 : mauvaise configuration de sécurité
+- A06 : composants vulnérables et obsolètes
+- A07 : identification et authentification de mauvaise qualité
+- A08 : manque d'intégrité des données et du logiciel
+- A09 : carence des systèmes de contrôle et de journalisation
+- A10 : falsification de requêtes côté serveur
+```
+
+## 10 Recommandation de OWASP Pour Sécuriser des applications (Web)
+```
+Recommandation A01-2021 : Broken Access Control
+Recommandation A02-2021 : cryptographic failure
+Recommandation A03-2021 : injection
+Recommandation A04-2021 : insecure design
+Recommandation A05-2021 : security misconfiguration
+Recommandation A06-2021 : Vulnerable and Outdated Components
+Recommandation A07-2021 : Identification and Authentication Failures
+Recommandation A08-2021 : Software and Data Integrity Failures
+Recommandation A09-2021 : Security Logging and Monitoring Failures
+Recommandation A10-2021 : Server-Side Request Forgery (SSRF)
+```
