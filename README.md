@@ -41,3 +41,19 @@ arsenal
 ```
 
 ![alt text](README-image.png)
+
+
+## Arsenal : autoriser les espaces dans les variables
+
+```bash
+file="/home/sdunix/app/saz-arsenal/arsenal/arsenal/modules/command.py"
+
+cp "$file" "$file.bak"
+sed -i "s/r'<(\[\^ <>\]+)>'/r'<([^<>]+)>'/" "$file"
+```
+
+Permet d’utiliser :
+
+```bash
+journalctl --since <YYYY-MM-DD HH:MM:SS>
+```

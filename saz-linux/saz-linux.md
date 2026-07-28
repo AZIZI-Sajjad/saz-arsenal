@@ -177,3 +177,10 @@ find <source_folder> \
   -type f \
   -delete
 ```
+
+
+## linux - journalctl - filtre since
+```
+journalctl --since <YYYY-MM-DD HH:MM:SS>
+```
+
