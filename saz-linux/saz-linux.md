@@ -184,3 +184,9 @@ find <source_folder> \
 journalctl --since <YYYY-MM-DD HH:MM:SS>
 ```
 
+## linux - Rename files in a tree
+```
+    ### sudo apt install rename
+find . -type f -name 'Readme.md' -exec rename 's/Readme\.md/REDAME.md/' {} +
+
+```
