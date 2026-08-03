@@ -130,6 +130,7 @@ nano -c /usr/lib/systemd/system/<NomUnite>.service
 
 ## Vérifier le lien symbolique d'une unité dans une target
 ```
+    ## Chemin d'accès des targets : /etc/systemd/system/
 ll /etc/systemd/system/<NomCible>.target.wants/<NomUnite>.service
 ```
 
@@ -186,11 +187,13 @@ systemctl is-active <NomService>
 
 ## Changer de target immédiatement
 ```
+    ## Chemin d'accès des targets : /etc/systemd/system/
 systemctl isolate <NomCible>.target
 ```
 
 ## Définir la target par défaut
 ```
+    ## Chemin d'accès des targets : /etc/systemd/system/
 systemctl set-default <NomCible>.target
 ```
 
@@ -294,9 +297,12 @@ parted <FichierSpecialDisque> mklabel gpt
 parted <FichierSpecialDisque> mkpart <Debut> <Fin>  
 ```
 
-## Créer un ou plusieurs volumes physiques LVM
+## Créer un ou plusieurs volumes physiques LVM -> 1 PV PAR DISQUE
 ```
 pvcreate <VolumePhysique1> <VolumePhysique2>
+    # Exemple de Résultats attendus 
+    ## Physical volume "/dev/sdb" successfully created.
+    ## Physical volume "/dev/sdc" successfully created.
 ```
 
 ## Consulter le résumé des volumes physiques
