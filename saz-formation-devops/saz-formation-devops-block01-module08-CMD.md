@@ -204,6 +204,11 @@ modinfo [-p] <NomModule>
 sudo modinfo <NomModule>
 ```
 
+## Charger un module noyau
+```
+modprobe <NomModule>
+```
+
 ## Charger ou décharger un module noyau
 ```
 modprobe [-r] <NomModule>
@@ -284,9 +289,9 @@ parted [<FichierSpecialDisque>]
 parted <FichierSpecialDisque> mklabel gpt
 ```
 
-## Créer une partition avec parted
+## Créer une partition avec parted | Exemple : parted <FichierSpecialDisque> mkpart <Debut> <Fin>  
 ```
-parted <FichierSpecialDisque> mkpart <Debut> <Fin>
+parted <FichierSpecialDisque> mkpart <Debut> <Fin>  
 ```
 
 ## Créer un ou plusieurs volumes physiques LVM
