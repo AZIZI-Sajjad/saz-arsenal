@@ -47,3 +47,23 @@ aws ec2 describe-instances --query "Reservations[*].Instances[*].InstanceId" --o
 ```
 aws ec2 describe-instances --region eu-west-3 --query "Reservations[*].Instances[*].InstanceId" --output text
 ```
+
+# Terraform - Activer le mode debug global
+```
+export TF_LOG=DEBUG
+```
+
+# Terraform - Isoler uniquement les logs de Terraform (sans les providers)
+```
+export TF_LOG_CORE=DEBUG
+```
+
+# Terraform - Isoler uniquement les logs des providers
+```
+export TF_LOG_PROVIDER=DEBUG
+```
+
+# Terraform - Enregistrer la sortie dans un fichier spécifique
+```
+export TF_LOG_PATH="/path/to/terraform.log"
+```
