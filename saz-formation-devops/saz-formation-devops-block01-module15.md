@@ -6,6 +6,7 @@
 #cat/PERSIST
 #cat/AZIZI-Sajjad
 #tag/DEVOPS
+
 ## SIEM (Security Information and Event Management)
 ```
 Outil combinant la collecte, l’analyse et la corrélation des logs pour la sécurité.
