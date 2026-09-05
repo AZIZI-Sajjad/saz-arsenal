@@ -224,3 +224,43 @@ Présence d’un système de secours pour éviter les interruptions.
 ```text
 Protocole utilisé pour superviser les équipements réseau.
 ```
+
+
+## Les bonnes pratiques pour notre pare-feu – C04
+```
+1. Créer des comptes nominatifs
+
+2. Protéger le compte administrateur local
+
+3. Limiter l’administration par SSH
+
+4. Mettre en œuvre l’authentification via certificat
+
+5. Configurer la limitation des tentatives
+
+6. Créer une politique de mot de passe fort
+
+7. Activer le 2FA
+
+8. Ajuster les droits d’administration
+
+9. Définir les sous-réseaux d’administration
+
+10. Désactiver les interfaces inutiles
+
+11. Utiliser une langue comprise par les exploitants
+
+12. Appliquer les mises à jour régulièrement
+
+13. Sauvegarder régulièrement la configuration
+
+14. Création de règles explicites pour le filtrage
+
+15. Superviser notre pare-feu
+
+16. Définir une politique de journalisation
+
+17. Configurer le serveur de temps
+
+18. Privilégier la diversification technologique des pares-feux
+```
