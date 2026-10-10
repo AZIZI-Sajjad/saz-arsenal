@@ -39,6 +39,8 @@ Ensemble de ressources informatiques fonctionnant ensemble pour exécuter des ap
 ## Chargeback
 ```
 Méthode consistant à refacturer les coûts cloud aux équipes, projets ou entités qui les consomment.
+On débite le budget de l'équipe pour facturer (réel).
+-----> Exemple Chargeback : -1 000 € sur le budget interne de l'Équipe A pour payer la facture cloud.
 ```
 
 ## Budget cloud
