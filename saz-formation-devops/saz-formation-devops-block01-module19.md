@@ -134,6 +134,8 @@ Trafic sortant d’un fournisseur cloud vers Internet, un autre cloud ou un rés
 ## Showback
 ```
 Méthode consistant à rendre visibles les coûts cloud par équipe, projet ou service sans refacturation interne directe.
+On montre la facture cloud pour sensibiliser (simulation).
+-----> Exemple Showback : « Équipe A, vous avez consommé 1 000 € de cloud ce mois-ci. » (Rien n'est prélevé).
 ```
 
 ## Savings Plan

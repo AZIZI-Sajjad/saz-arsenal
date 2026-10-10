@@ -6,153 +6,153 @@
 #cat/PERSIST
 #cat/AZIZI-Sajjad
 #tag/DEVOPS
-## Dashboard FinOps
+
+## Jenkins
 ```
-Tableau de bord permettant de suivre les coûts, tendances, budgets, anomalies et optimisations cloud.
+Serveur d’automatisation open source pour CI/CD très populaire.
 ```
 
-## Tag
+## Pipeline
 ```
-Métadonnée associée à une ressource cloud pour l’identifier, la classer ou suivre ses coûts.
-```
-
-## Cloud public
-```
-Infrastructure informatique fournie par un prestataire externe, comme AWS, Azure ou Google Cloud, facturée à l’usage.
+Série d’étapes automatisées permettant d’intégrer, tester, construire et déployer du code.
 ```
 
-## CAPEX
+## Trigger
 ```
-Dépenses d’investissement liées à l’achat d’équipements ou d’infrastructures.
-```
-
-## Alerte de coût
-```
-Notification déclenchée lorsqu’un niveau de dépense réel ou prévisionnel dépasse un seuil défini.
+Événement déclencheur automatisant l’exécution d’une pipeline CI/CD.
 ```
 
-## Cluster
+## Registry
 ```
-Ensemble de ressources informatiques fonctionnant ensemble pour exécuter des applications ou services.
-```
-
-## Chargeback
-```
-Méthode consistant à refacturer les coûts cloud aux équipes, projets ou entités qui les consomment.
+Serveur où sont stockées et versionnées les images de conteneurs Docker, comme Docker Hub ou GHCR.
 ```
 
-## Budget cloud
+## Continuous Deployment
 ```
-Seuil financier défini pour suivre ou limiter les dépenses associées à un périmètre cloud.
-```
-
-## Stockage objet
-```
-Type de stockage cloud adapté aux fichiers, sauvegardes, archives et données non structurées.
+Automatisation totale qui déploie en production toutes les modifications validées automatiquement.
 ```
 
-## Rightsizing
+## Terraform
 ```
-Ajustement de la taille des ressources cloud pour éviter le surdimensionnement et réduire les coûts.
-```
-
-## Cost allocation
-```
-Répartition des coûts cloud entre équipes, projets, applications ou centres de coûts.
+Outil d’infrastructure as code pour gérer les ressources cloud, réseaux, VM, bases de données.
 ```
 
-## Lifecycle policy
+## Idempotence
 ```
-Règle automatisée permettant de déplacer, archiver ou supprimer des données selon leur âge ou leur usage.
-```
-
-## FinOps
-```
-Méthode de gestion collaborative des coûts cloud visant à responsabiliser les équipes techniques, métiers et financières.
+Propriété d’une opération qui, appliquée plusieurs fois, ne modifie pas le résultat au-delà de la première application.
 ```
 
-## Instance réservée
+## GitHub Actions
 ```
-Engagement d’utilisation d’une ressource cloud sur une durée donnée en échange d’une réduction tarifaire.
+Service d’automatisation de workflows intégré à GitHub pour les pipelines CI/CD.
+```
+
+## Rollback
+```
+Retour à une version précédente d’une application en cas de problème sur la version déployée actuelle.
+```
+
+## API (Application Programming Interface)
+```
+Interface de programmation permettant la communication entre différentes applications.
+```
+
+## Versioning
+```
+Gestion et suivi des différentes versions du code ou des configurations.
+```
+
+## YAML
+```
+Format de fichier texte lisible utilisé pour configurer les pipelines, Docker Compose, Kubernetes, etc.
+```
+
+## CD (Continuous Delivery/Deployment)
+```
+Livraison automatisée et continue du code validé dans des environnements de préproduction ou production.
+```
+
+## Provisioning
+```
+Processus de création et configuration automatique des ressources informatiques.
 ```
 
 ## Kubernetes
 ```
-Plateforme d’orchestration permettant de déployer, gérer et faire évoluer des applications conteneurisées.
+Plateforme d’orchestration de conteneurs pour la gestion à grande échelle et haute disponibilité.
 ```
 
-## Label
+## Ansible
 ```
-Équivalent d’un tag dans certains environnements, notamment Kubernetes ou Google Cloud.
-```
-
-## Autoscaling
-```
-Mécanisme permettant d’ajuster automatiquement le nombre ou la taille des ressources selon la charge.
+Outil d’automatisation IT permettant de gérer la configuration, le déploiement et l’orchestration sans agent.
 ```
 
-## Classe de stockage
+## Artefact
 ```
-Niveau de stockage défini selon la fréquence d’accès, la performance attendue et le coût.
-```
-
-## OPEX
-```
-Dépenses opérationnelles récurrentes, comme la consommation de ressources cloud facturée mensuellement.
+Fichier ou package produit par une étape de build, déployé ensuite en environnement cible.
 ```
 
-## Quota
+## Prometheus
 ```
-Limite imposée sur la quantité de ressources utilisables dans un compte, un projet ou une région cloud.
-```
-
-## Pay-as-you-go
-```
-Modèle de facturation à l’usage où l’on paie uniquement les ressources consommées.
+Outil de monitoring open source, spécialisé dans la récupération de métriques en temps réel.
 ```
 
-## IaaS
+## GitOps
 ```
-Infrastructure as a Service, modèle cloud fournissant des ressources comme des machines virtuelles, du stockage et du réseau.
-```
-
-## SaaS
-```
-Software as a Service, logiciel accessible en ligne, généralement facturé par abonnement ou par utilisateur.
+Approche d’automatisation basée sur Git comme source unique de vérité des configurations et déploiements.
 ```
 
-## PaaS
+## CI (Continuous Integration)
 ```
-Platform as a Service, modèle cloud fournissant une plateforme gérée pour déployer des applications sans gérer toute l’infrastructure.
-```
-
-## Egress
-```
-Trafic sortant d’un fournisseur cloud vers Internet, un autre cloud ou un réseau externe, souvent facturé.
+Pratique qui consiste à valider automatiquement chaque modification de code via des tests automatisés.
 ```
 
-## Showback
+## Build
 ```
-Méthode consistant à rendre visibles les coûts cloud par équipe, projet ou service sans refacturation interne directe.
-```
-
-## Savings Plan
-```
-Modèle d’engagement financier proposé par certains fournisseurs cloud pour réduire les coûts en échange d’une consommation minimale.
+Étape d’une pipeline CI/CD qui compile et assemble le code source en un artefact exécutable.
 ```
 
-## Namespace
+## Conteneur
 ```
-Espace logique Kubernetes utilisé pour isoler et organiser les ressources d’un cluster.
-```
-
-## Spot Instance
-```
-Ressource cloud proposée à prix réduit, mais pouvant être interrompue par le fournisseur.
+Environnement léger isolé contenant une application et ses dépendances, portable et reproductible.
 ```
 
-## Forecast
+## Artifact Repository
 ```
-Prévision des dépenses futures basée sur les consommations passées et les tendances observées.
+Stockage centralisé pour les artefacts générés par les builds et utilisés dans les déploiements.
 ```
 
+## Helm
+```
+Gestionnaire de paquets pour Kubernetes facilitant le déploiement d’applications complexes.
+```
+
+## Docker
+```
+Plateforme permettant de créer, déployer et exécuter des conteneurs.
+```
+
+## Docker Compose
+```
+Outil d’orchestration simple de plusieurs conteneurs via un fichier de configuration YAML.
+```
+
+## Testing (Tests unitaires, d’intégration)
+```
+Vérifications automatiques que le code fonctionne comme attendu avant déploiement.
+```
+
+## IaC (Infrastructure as Code)
+```
+Pratique consistant à définir et gérer l’infrastructure via des fichiers de configuration versionnés.
+```
+
+## Webhook
+```
+Notification envoyée automatiquement depuis un outil (Git, registry) pour déclencher une action (pipeline).
+```
+
+## Linter
+```
+Outil analysant le code source pour détecter des erreurs de syntaxe et améliorer la qualité.
+```
