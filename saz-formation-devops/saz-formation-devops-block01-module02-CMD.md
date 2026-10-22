@@ -29,7 +29,7 @@
 
 ## Matrice domaines x phases
 ```
- DOMAINE         | 1.INIT | 2.PLAN | 3.EXEC | 4.M&C | 5.CLOSE
+ DOMAINE          | 1.INIT | 2.PLAN | 3.EXEC | 4.M&C | 5.CLOSE
  ----------------+--------+--------+--------+-------+--------
  Integration     |   X    |   X    |   X    |   X   |   X
  Scoping         |        |   X    |        |   X   |
