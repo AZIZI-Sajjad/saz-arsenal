@@ -8,7 +8,10 @@
 #tag/DEVOPS
 
 
-## 0 - PAS DE COMMANDES DANS CE CHAPITRE
+## Les 4 dimensions d'un projet
 ```
-0 - PAS DE COMMANDES DANS CE CHAPITRE
+Objectifs
+Phases
+Equipes
+Livrables
 ```
